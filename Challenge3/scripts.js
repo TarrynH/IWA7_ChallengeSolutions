@@ -10,15 +10,24 @@ const divider = '----------------------------------'
 
 // Only change below this line
 
-const leoFixed = parseFloat(leoBalance*-1).toFixed(2)
-const sarahFixed = parseFloat(sarahBalance*-1).toFixed(2)
+leoEven = parseFloat(leoBalance*-1)
+sarahEven = parseFloat(sarahBalance*-1)
 
-const owed = "R " + parseFloat(leoBalance*-1 + sarahBalance*-1).toFixed(2) + "\n"
+totalRounded = (leoEven + sarahEven).toFixed(2)
 
-const leo = `\n ${leoName} ${leoSurname.trim()} (Owed: R ${leoFixed})\n`
-const sarah = `${sarahName.trim()} ${sarahSurname} (Owed: R ${sarahFixed})\n\n`
+leoRounded = leoEven.toFixed(2)
+sarahRounded = sarahEven.toFixed(2) 
 
-const total = "\n Total amount owed: "
-const result = leo + sarah  + divider + total + owed + divider
+const owed = `R ${totalRounded}\n`
+const leo = `\n${leoName} ${leoSurname.trim()} (Owed: R ${leoRounded})\n`
+const sarah = `${sarahName.trim()} ${sarahSurname} (Owed: R ${sarahRounded})\n\n`
+const total = "\n  Total amount owed: "
+const result = leo + sarah + divider + total + owed + divider
 
-console.log(result)
+// const owed = `R ${totalRounded}`
+// const leo = `${leoName} ${leoSurname.trim()} (Owed: R ${leoRounded})`
+// const sarah = `${sarahName.trim()} ${sarahSurname} (Owed: R ${sarahRounded})`
+// const total = "Total amount owed: "
+// const result = `\n${leo}\n${sarah}\n\n${divider}\n  ${total}${owed}  \n${divider}`
+
+console.log(result) 
